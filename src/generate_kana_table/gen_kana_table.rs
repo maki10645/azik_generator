@@ -1,145 +1,336 @@
-struct Vowels<'a> {
-    a: &'a str,
-    i: &'a str,
-    u: &'a str,
-    e: &'a str,
-    o: &'a str,
+struct JapaneseChar {
+    consonant: Consonants,
+    vowel: Vowels,
 }
 
-impl Vowels<'static> {
-    fn order(vowel: &str) {
-        match vowel {
-            "a" => Ok(0),
-            "i" => Ok(0),
-            "u" => Ok(0),
-            "e" => Ok(0),
-            "o" => Ok(0),
-            _ => Err(114514),
-        };
-    }
-}
-
-fn static_vowels() -> Vowels<'static> {
-    Vowels {
-        a: "あ",
-        i: "い",
-        u: "う",
-        e: "え",
-        o: "お",
-    }
-}
-
-struct Consonants<'a> {
-    k: [&'a str; 5],
-    ky: [&'a str; 5],
-    g: [&'a str; 5],
-    gy: [&'a str; 5],
-    s: [&'a str; 5],
-    sy: [&'a str; 5],
-    sh: [&'a str; 5],
-    sg: [&'a str; 5],
-    z: [&'a str; 5],
-    j: [&'a str; 5],
-    zy: [&'a str; 5],
-    zg: [&'a str; 5],
-    t: [&'a str; 5],
-    ty: [&'a str; 5],
-    th: [&'a str; 5],
-    d: [&'a str; 5],
-    dy: [&'a str; 5],
-    dh: [&'a str; 5],
-    n: [&'a str; 5],
-    ny: [&'a str; 5],
-    h: [&'a str; 5],
-    hy: [&'a str; 5],
-    hg: [&'a str; 5],
-    f: [&'a str; 5],
-    fy: [&'a str; 5],
-    b: [&'a str; 5],
-    by: [&'a str; 5],
-    bg: [&'a str; 5],
-    p: [&'a str; 5],
-    py: [&'a str; 5],
-    pg: [&'a str; 5],
-    m: [&'a str; 5],
-    my: [&'a str; 5],
-    r: [&'a str; 5],
-    ry: [&'a str; 5],
-    w: [&'a str; 5],
-    wh: [&'a str; 5],
-    y: [&'a str; 5],
-    v: [&'a str; 5],
-}
-
-impl Consonants<'static> {}
-
-fn static_hiragana() -> Consonants<'static> {
-    Consonants {
-        k: ["か", "き", "く", "け", "こ"],
-        ky: ["きゃ", "きぃ", "きゅ", "きぇ", "きょ"],
-        g: ["が", "ぎ", "ぐ", "げ", "ご"],
-        gy: ["ぎゃ", "ぎぃ", "ぎゅ", "ぎぇ", "ぎょ"],
-        s: ["さ", "し", "す", "せ", "そ"],
-        sy: ["しゃ", "し", "しゅ", "しぇ", "しょ"],
-        sh: ["しゃ", "し", "しゅ", "しぇ", "しょ"],
-        sg: ["しゃ", "し", "しゅ", "しぇ", "しょ"],
-        z: ["ず", "じ", "ず", "ぜ", "ぞ"],
-        j: ["じゃ", "じ", "じゅ", "じぇ", "じょ"],
-        zy: ["じゃ", "じ", "じゅ", "じぇ", "じょ"],
-        zg: ["じゃ", "じ", "じゅ", "じぇ", "じょ"],
-        t: ["た", "ち", "つ", "て", "と"],
-        ty: ["ちゃ", "ちぃ", "ちゅ", "ちぇ", "ちょ"],
-        th: ["てゃ", "てぃ", "てゅ", "てぇ", "てょ"],
-        d: ["だ", "ぢ", "づ", "で", "ど"],
-        dy: ["ぢゃ", "ぢぃ", "ぢゅ", "ぢぇ", "ぢょ"],
-        dh: ["でゃ", "でぃ", "でゅ", "でぇ", "でょ"],
-        n: ["な", "に", "ぬ", "ね", "の"],
-        ny: ["にゃ", "に", "にゅ", "にぇ", "にょ"],
-        h: ["は", "ひ", "ふ", "へ", "ほ"],
-        hy: ["ひゃ", "ひ", "ひゅ", "ひぇ", "ひょ"],
-        hg: ["ひゃ", "ひ", "ひゅ", "ひぇ", "ひょ"],
-        f: ["ふぁ", "ふぃ", "ふ", "ふぇ", "ふぉ"],
-        fy: ["ふゃ", "ふぃ", "ふゅ", "ふぇ", "ふょ"],
-        b: ["ば", "び", "ぶ", "べ", "ぼ"],
-        by: ["びゃ", "び", "びゅ", "びぇ", "びょ"],
-        bg: ["びゃ", "び", "びゅ", "びぇ", "びょ"],
-        p: ["ぱ", "ぴ", "ぷ", "ぺ", "ぽ"],
-        py: ["ぴゃ", "ぴ", "ぴゅ", "ぴぇ", "ぴょ"],
-        pg: ["ぴゃ", "ぴ", "ぴゅ", "ぴぇ", "ぴょ"],
-        m: ["ま", "み", "む", "め", "も"],
-        my: ["みゃ", "み", "みゅ", "みぇ", "みょ"],
-        r: ["ら", "り", "る", "れ", "ろ"],
-        ry: ["りゃ", "り", "りゅ", "りぇ", "りょ"],
-        w: ["わ", "うぃ", "う", "うぇ", "を"],
-        wh: ["うぁ", "うぃ", "う", "うぇ", "うぉ"],
-        y: ["や", "い", "ゆ", "いぇ", "よ"],
-        v: ["ゔぁ", "ゔぃ", "ゔ", "ゔぇ", "ゔぉ"],
-    }
-}
-
-struct AzikTokens {
-    mini_tsu: String,
-    nn: String,
-}
-
-impl AzikTokens {
-    fn new(nn: String, mini_tsu: String) -> AzikTokens {
-        AzikTokens { mini_tsu, nn }
-    }
-
-    fn default_init() -> AzikTokens {
-        AzikTokens {
-            mini_tsu: String::from("v"),
-            nn: String::from("c"),
+impl JapaneseChar {
+    fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
+        match consonant {
+            Consonants::K => match vowel {
+                Vowels::A => "か",
+                Vowels::I => "き",
+                Vowels::U => "く",
+                Vowels::E => "け",
+                Vowels::O => "こ",
+            },
+            Consonants::Ky => match vowel {
+                Vowels::A => "きゃ",
+                Vowels::I => "きぃ",
+                Vowels::U => "きゅ",
+                Vowels::E => "きぇ",
+                Vowels::O => "きょ",
+            },
+            Consonants::G => match vowel {
+                Vowels::A => "が",
+                Vowels::I => "ぎ",
+                Vowels::U => "ぐ",
+                Vowels::E => "げ",
+                Vowels::O => "ご",
+            },
+            Consonants::Gy => match vowel {
+                Vowels::A => "ぎゃ",
+                Vowels::I => "ぎぃ",
+                Vowels::U => "ぎゅ",
+                Vowels::E => "ぎぇ",
+                Vowels::O => "ぎょ",
+            },
+            Consonants::S => match vowel {
+                Vowels::A => "さ",
+                Vowels::I => "し",
+                Vowels::U => "す",
+                Vowels::E => "せ",
+                Vowels::O => "そ",
+            },
+            Consonants::Sy => match vowel {
+                Vowels::A => "しゃ",
+                Vowels::I => "しぃ",
+                Vowels::U => "しゅ",
+                Vowels::E => "しぇ",
+                Vowels::O => "しょ",
+            },
+            Consonants::Sh => match vowel {
+                Vowels::A => "しゃ",
+                Vowels::I => "しぃ",
+                Vowels::U => "しゅ",
+                Vowels::E => "しぇ",
+                Vowels::O => "しょ",
+            },
+            Consonants::Sg => match vowel {
+                Vowels::A => "しゃ",
+                Vowels::I => "しぃ",
+                Vowels::U => "しゅ",
+                Vowels::E => "しぇ",
+                Vowels::O => "しょ",
+            },
+            Consonants::Z => match vowel {
+                Vowels::A => "ざ",
+                Vowels::I => "じ",
+                Vowels::U => "ず",
+                Vowels::E => "ぜ",
+                Vowels::O => "ぞ",
+            },
+            Consonants::J => match vowel {
+                Vowels::A => "じゃ",
+                Vowels::I => "じぃ",
+                Vowels::U => "じゅ",
+                Vowels::E => "じぇ",
+                Vowels::O => "じょ",
+            },
+            Consonants::Zy => match vowel {
+                Vowels::A => "じゃ",
+                Vowels::I => "じぃ",
+                Vowels::U => "じゅ",
+                Vowels::E => "じぇ",
+                Vowels::O => "じょ",
+            },
+            Consonants::Zg => match vowel {
+                Vowels::A => "じゃ",
+                Vowels::I => "じぃ",
+                Vowels::U => "じゅ",
+                Vowels::E => "じぇ",
+                Vowels::O => "じょ",
+            },
+            Consonants::T => match vowel {
+                Vowels::A => "た",
+                Vowels::I => "ち",
+                Vowels::U => "つ",
+                Vowels::E => "て",
+                Vowels::O => "と",
+            },
+            Consonants::Ty => match vowel {
+                Vowels::A => "ちゃ",
+                Vowels::I => "ちぃ",
+                Vowels::U => "ちゅ",
+                Vowels::E => "ちぇ",
+                Vowels::O => "ちょ",
+            },
+            Consonants::Th => match vowel {
+                Vowels::A => "てゃ",
+                Vowels::I => "てぃ",
+                Vowels::U => "てゅ",
+                Vowels::E => "てぇ",
+                Vowels::O => "てょ",
+            },
+            Consonants::D => match vowel {
+                Vowels::A => "だ",
+                Vowels::I => "ぢ",
+                Vowels::U => "づ",
+                Vowels::E => "で",
+                Vowels::O => "ど",
+            },
+            Consonants::Dy => match vowel {
+                Vowels::A => "ぢゃ",
+                Vowels::I => "ぢぃ",
+                Vowels::U => "ぢゅ",
+                Vowels::E => "ぢぇ",
+                Vowels::O => "ぢょ",
+            },
+            Consonants::Dh => match vowel {
+                Vowels::A => "でゃ",
+                Vowels::I => "でぃ",
+                Vowels::U => "でゅ",
+                Vowels::E => "でぇ",
+                Vowels::O => "でょ",
+            },
+            Consonants::N => match vowel {
+                Vowels::A => "な",
+                Vowels::I => "に",
+                Vowels::U => "ぬ",
+                Vowels::E => "ね",
+                Vowels::O => "の",
+            },
+            Consonants::Ny => match vowel {
+                Vowels::A => "にゃ",
+                Vowels::I => "にぃ",
+                Vowels::U => "にゅ",
+                Vowels::E => "にぇ",
+                Vowels::O => "にょ",
+            },
+            Consonants::H => match vowel {
+                Vowels::A => "は",
+                Vowels::I => "ひ",
+                Vowels::U => "ふ",
+                Vowels::E => "へ",
+                Vowels::O => "ほ",
+            },
+            Consonants::Hy => match vowel {
+                Vowels::A => "ひゃ",
+                Vowels::I => "ひぃ",
+                Vowels::U => "ひゅ",
+                Vowels::E => "ひぇ",
+                Vowels::O => "ひょ",
+            },
+            Consonants::Hg => match vowel {
+                Vowels::A => "ひゃ",
+                Vowels::I => "ひぃ",
+                Vowels::U => "ひゅ",
+                Vowels::E => "ひぇ",
+                Vowels::O => "ひょ",
+            },
+            Consonants::F => match vowel {
+                Vowels::A => "ふぁ",
+                Vowels::I => "ふぃ",
+                Vowels::U => "ふ",
+                Vowels::E => "ふぇ",
+                Vowels::O => "ふぉ",
+            },
+            Consonants::Fy => match vowel {
+                Vowels::A => "ふゃ",
+                Vowels::I => "ふぃ",
+                Vowels::U => "ふゅ",
+                Vowels::E => "ふぇ",
+                Vowels::O => "ふょ",
+            },
+            Consonants::B => match vowel {
+                Vowels::A => "ば",
+                Vowels::I => "び",
+                Vowels::U => "ぶ",
+                Vowels::E => "べ",
+                Vowels::O => "ぼ",
+            },
+            Consonants::By => match vowel {
+                Vowels::A => "びゃ",
+                Vowels::I => "びぃ",
+                Vowels::U => "びゅ",
+                Vowels::E => "びぇ",
+                Vowels::O => "びょ",
+            },
+            Consonants::Bg => match vowel {
+                Vowels::A => "びゃ",
+                Vowels::I => "びぃ",
+                Vowels::U => "びゅ",
+                Vowels::E => "びぇ",
+                Vowels::O => "びょ",
+            },
+            Consonants::P => match vowel {
+                Vowels::A => "ぱ",
+                Vowels::I => "ぴ",
+                Vowels::U => "ぷ",
+                Vowels::E => "ぺ",
+                Vowels::O => "ぽ",
+            },
+            Consonants::Py => match vowel {
+                Vowels::A => "ぴゃ",
+                Vowels::I => "ぴぃ",
+                Vowels::U => "ぴゅ",
+                Vowels::E => "ぴぇ",
+                Vowels::O => "ぴょ",
+            },
+            Consonants::Pg => match vowel {
+                Vowels::A => "ぴゃ",
+                Vowels::I => "ぴぃ",
+                Vowels::U => "ぴゅ",
+                Vowels::E => "ぴぇ",
+                Vowels::O => "ぴょ",
+            },
+            Consonants::M => match vowel {
+                Vowels::A => "ま",
+                Vowels::I => "み",
+                Vowels::U => "む",
+                Vowels::E => "め",
+                Vowels::O => "お",
+            },
+            Consonants::My => match vowel {
+                Vowels::A => "みゃ",
+                Vowels::I => "みぃ",
+                Vowels::U => "みゅ",
+                Vowels::E => "みぇ",
+                Vowels::O => "みょ",
+            },
+            Consonants::Y => match vowel {
+                Vowels::A => "や",
+                Vowels::I => "い",
+                Vowels::U => "ゆ",
+                Vowels::E => "いぇ",
+                Vowels::O => "よ",
+            },
+            Consonants::R => match vowel {
+                Vowels::A => "ら",
+                Vowels::I => "り",
+                Vowels::U => "る",
+                Vowels::E => "れ",
+                Vowels::O => "ろ",
+            },
+            Consonants::Ry => match vowel {
+                Vowels::A => "りゃ",
+                Vowels::I => "りぃ",
+                Vowels::U => "りゅ",
+                Vowels::E => "りぇ",
+                Vowels::O => "りょ",
+            },
+            Consonants::W => match vowel {
+                Vowels::A => "わ",
+                Vowels::I => "うぃ",
+                Vowels::U => "う",
+                Vowels::E => "うぇ",
+                Vowels::O => "を",
+            },
+            Consonants::Wh => match vowel {
+                Vowels::A => "うぁ",
+                Vowels::I => "うぃ",
+                Vowels::U => "う",
+                Vowels::E => "うぇ",
+                Vowels::O => "うぉ",
+            },
+            Consonants::V => match vowel {
+                Vowels::A => "ゔぁ",
+                Vowels::I => "ゔぃ",
+                Vowels::U => "ゔ",
+                Vowels::E => "ゔぇ",
+                Vowels::O => "ゔぉ",
+            },
         }
     }
 }
 
-pub fn gen_kana_table() {
-    let ou = "ou";
-    let vowels = static_vowels();
+enum Consonants {
+    K,
+    Ky,
+    G,
+    Gy,
+    S,
+    Sy,
+    Sh,
+    Sg,
+    Z,
+    J,
+    Zy,
+    Zg,
+    T,
+    Ty,
+    Th,
+    D,
+    Dy,
+    Dh,
+    N,
+    Ny,
+    H,
+    Hy,
+    Hg,
+    F,
+    Fy,
+    B,
+    By,
+    Bg,
+    P,
+    Py,
+    Pg,
+    M,
+    My,
+    Y,
+    R,
+    Ry,
+    W,
+    Wh,
+    V,
+}
 
-    let vowel = ou.chars().next().unwrap();
+enum Vowels {
+    A,
+    I,
+    U,
+    E,
+    O,
 }
 
 #[cfg(test)]
