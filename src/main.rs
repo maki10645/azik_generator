@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+#![feature(variant_count)]
 
 mod generate_kana_table;
 
