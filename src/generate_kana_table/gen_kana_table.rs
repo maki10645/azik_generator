@@ -98,14 +98,14 @@ pub fn gen_consonants_array() -> Vec<Consonants> {
     out
 }
 
-pub fn gen_vowels_array() -> Vec<Vowels> {
+fn gen_vowels_array() -> Vec<Vowels> {
     let mut out: Vec<Vowels> = Vec::with_capacity(5);
 
     out.extend(vec![Vowels::A, Vowels::I, Vowels::U, Vowels::E, Vowels::O]);
     out
 }
 
-pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
+fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
     match consonant {
         Consonants::K => match vowel {
             Vowels::A => "か",
@@ -381,6 +381,21 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::O => "ゔぉ",
         },
     }
+}
+
+pub fn gen_hiragana_table() -> String {
+    let mut out = String::new();
+
+    for i in 0..39 {
+        let consonant = *gen_consonants_array().get(i).unwrap();
+        for j in 0..5 {
+            let vowel = *gen_vowels_array().get(j).unwrap();
+
+            out.push_str(gen_hiragana(consonant, vowel));
+        }
+    }
+
+    out
 }
 
 #[cfg(test)]

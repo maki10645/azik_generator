@@ -17,7 +17,7 @@ mod test {
         // gen_hiraganaが正常に動作することを確認。
         assert_eq!(gen_hiragana(Consonants::K, Vowels::A), "か");
 
-        // gen_consonants_arrayとgen_vowels_arrayの結合テスト
+        // 作成した関数の結合テスト
         let consonant = gen_consonants_array();
         let vowels = gen_vowels_array();
 
