@@ -1,4 +1,7 @@
-enum Consonants {
+use std::vec;
+
+#[derive(Clone, Debug, Copy)]
+pub enum Consonants {
     K,
     Ky,
     G,
@@ -40,7 +43,8 @@ enum Consonants {
     V,
 }
 
-enum Vowels {
+#[derive(Clone, Debug, Copy)]
+pub enum Vowels {
     A,
     I,
     U,
@@ -48,7 +52,60 @@ enum Vowels {
     O,
 }
 
-fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
+pub fn gen_consonants_array() -> Vec<Consonants> {
+    let mut out: Vec<Consonants> = Vec::with_capacity(39);
+    out.extend(vec![
+        Consonants::K,
+        Consonants::Ky,
+        Consonants::G,
+        Consonants::Gy,
+        Consonants::S,
+        Consonants::Sy,
+        Consonants::Sh,
+        Consonants::Sg,
+        Consonants::Z,
+        Consonants::J,
+        Consonants::Zy,
+        Consonants::Zg,
+        Consonants::T,
+        Consonants::Ty,
+        Consonants::Th,
+        Consonants::D,
+        Consonants::Dy,
+        Consonants::Dh,
+        Consonants::N,
+        Consonants::Ny,
+        Consonants::H,
+        Consonants::Hy,
+        Consonants::Hg,
+        Consonants::F,
+        Consonants::Fy,
+        Consonants::B,
+        Consonants::By,
+        Consonants::Bg,
+        Consonants::P,
+        Consonants::Py,
+        Consonants::Pg,
+        Consonants::M,
+        Consonants::My,
+        Consonants::Y,
+        Consonants::R,
+        Consonants::Ry,
+        Consonants::W,
+        Consonants::Wh,
+        Consonants::V,
+    ]);
+    out
+}
+
+pub fn gen_vowels_array() -> Vec<Vowels> {
+    let mut out: Vec<Vowels> = Vec::with_capacity(5);
+
+    out.extend(vec![Vowels::A, Vowels::I, Vowels::U, Vowels::E, Vowels::O]);
+    out
+}
+
+pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
     match consonant {
         Consonants::K => match vowel {
             Vowels::A => "か",
