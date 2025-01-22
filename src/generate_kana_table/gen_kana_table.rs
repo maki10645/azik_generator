@@ -388,8 +388,7 @@ fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
 pub fn gen_hiragana_table() {
     let mut out = String::new();
     out.push_str(
-        "v		ん
-la	ぁ
+        "la	ぁ
 li	ぃ
 lu	ぅ
 le	ぇ
@@ -424,7 +423,7 @@ $	$
 .	。
 /	/
 :	:
-;	;
+;	ん
 <	<
 =	=
 >	>
