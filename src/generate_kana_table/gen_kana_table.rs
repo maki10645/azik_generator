@@ -390,8 +390,9 @@ pub fn gen_hiragana_table() -> String {
         let consonant = *gen_consonants_array().get(i).unwrap();
         for j in 0..5 {
             let vowel = *gen_vowels_array().get(j).unwrap();
+            let kana = gen_hiragana(consonant, vowel).to_string() + "\n";
 
-            out.push_str(gen_hiragana(consonant, vowel));
+            out.push_str(kana.as_str());
         }
     }
 
