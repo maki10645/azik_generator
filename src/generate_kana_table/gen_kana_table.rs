@@ -1,7 +1,9 @@
+use std::fs::File;
+use std::io::Write;
 use std::vec;
 
-#[derive(Clone, Debug, Copy)]
-pub enum Consonants {
+#[derive(Clone, Debug, Copy, strum::Display)]
+enum Consonants {
     K,
     Ky,
     G,
@@ -43,8 +45,8 @@ pub enum Consonants {
     V,
 }
 
-#[derive(Clone, Debug, Copy)]
-pub enum Vowels {
+#[derive(Clone, Debug, Copy, strum::Display)]
+enum Vowels {
     A,
     I,
     U,
@@ -52,7 +54,7 @@ pub enum Vowels {
     O,
 }
 
-pub fn gen_consonants_array() -> Vec<Consonants> {
+fn gen_consonants_array() -> Vec<Consonants> {
     let mut out: Vec<Consonants> = Vec::with_capacity(39);
     out.extend(vec![
         Consonants::K,
@@ -383,20 +385,104 @@ fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
     }
 }
 
-pub fn gen_hiragana_table() -> String {
+pub fn gen_hiragana_table() {
     let mut out = String::new();
+    out.push_str(
+        "v		ん
+la	ぁ
+li	ぃ
+lu	ぅ
+le	ぇ
+lo	ぉ
+lya	ゃ
+lyu	ゅ
+lyo	ょ
+0	0
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+?	？
+!	！
+\"	\"
+#	#
+$	$
+%	%
+&	&
+'	'
+(	(
+)	)
+*	*
++	+
+,	、
+-	ー
+.	。
+/	/
+:	:
+;	;
+<	<
+=	=
+>	>
+?	？
+@	@
+[	「
+\\	\\
+]	」
+^	^
+_	_
+`	`
+{	{
+|	|
+}	}
+~	~
+z<	‥
+z~	〜
+z>	…
+z/	・
+z(	（
+z)	）
+z[	『
+z]	』
+z{	【
+z}	】
+zH	←
+zJ	↓
+zK	↑
+zL	→
+z;	゛
+z:	゜
+
+a	あ
+i	い
+u	う
+e	え
+o	お
+",
+    );
 
     for i in 0..39 {
         let consonant = *gen_consonants_array().get(i).unwrap();
+        let consonant_alph = consonant.to_string();
         for j in 0..5 {
             let vowel = *gen_vowels_array().get(j).unwrap();
             let kana = gen_hiragana(consonant, vowel).to_string() + "\n";
+            let vowel_alph = vowel.to_string();
 
-            out.push_str(kana.as_str());
+            let alphs = consonant_alph.clone().to_lowercase() + &vowel_alph.to_lowercase();
+
+            out.push_str(&(alphs + "	" + kana.as_str()));
         }
     }
+    let mut file = File::create("table.txt").expect("hoge");
 
-    out
+    let _ = file.write_all(out.as_bytes());
+
+    let _ = file.flush();
 }
 
 #[cfg(test)]
