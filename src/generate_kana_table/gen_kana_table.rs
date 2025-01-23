@@ -1,12 +1,14 @@
 use std::fs::File;
-use std::io::Write;
+use std::io::{BufReader, Write};
 
+use super::azik_config::AzikConfig;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
 use super::gen_vowel::gen_vowels_array;
 
 pub fn gen_hiragana_table() {
     let mut out = String::new();
+    // Azikの対象外を事前に作成
     out.push_str(
         "la	ぁ
 li	ぃ
@@ -104,5 +106,10 @@ o	お
     let _ = file.flush();
 }
 
-#[cfg(test)]
-include!("./gen_kana_table_test.rs");
+pub fn azik_deserializer() {
+    let file = File::open("input.json").expect("Can't read file");
+    let reader: BufReader<File> = BufReader::new(file);
+    let out: Result<AzikConfig, serde_json::Error> = serde_json::from_reader(reader);
+
+    print!("{:?}", out.unwrap())
+}
