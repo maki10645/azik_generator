@@ -4,6 +4,7 @@ use std::io::{BufReader, Write};
 use crate::generate_kana_table::azik_config::gen_sequence;
 
 use super::azik_config::AzikConfig;
+use super::deserealizer::azik_deserializer;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
 use super::gen_vowel::gen_vowels_array;
@@ -110,12 +111,4 @@ o	お
     let _ = file.write_all(out.as_bytes());
 
     let _ = file.flush();
-}
-
-pub fn azik_deserializer() -> AzikConfig {
-    let file = File::open("input.json").expect("Can't read file");
-    let reader: BufReader<File> = BufReader::new(file);
-    let config: Result<AzikConfig, serde_json::Error> = serde_json::from_reader(reader);
-
-    config.expect("Not support this format")
 }
