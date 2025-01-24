@@ -8,6 +8,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "く",
             Vowels::E => "け",
             Vowels::O => "こ",
+            _ => "",
         },
         Consonants::Ky => match vowel {
             Vowels::A => "きゃ",
@@ -15,6 +16,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "きゅ",
             Vowels::E => "きぇ",
             Vowels::O => "きょ",
+            _ => "",
         },
         Consonants::G => match vowel {
             Vowels::A => "が",
@@ -22,6 +24,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぐ",
             Vowels::E => "げ",
             Vowels::O => "ご",
+            _ => "",
         },
         Consonants::Gy => match vowel {
             Vowels::A => "ぎゃ",
@@ -29,6 +32,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぎゅ",
             Vowels::E => "ぎぇ",
             Vowels::O => "ぎょ",
+            _ => "",
         },
         Consonants::S => match vowel {
             Vowels::A => "さ",
@@ -36,6 +40,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "す",
             Vowels::E => "せ",
             Vowels::O => "そ",
+            _ => "",
         },
         Consonants::Sy => match vowel {
             Vowels::A => "しゃ",
@@ -43,6 +48,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "しゅ",
             Vowels::E => "しぇ",
             Vowels::O => "しょ",
+            _ => "",
         },
         Consonants::Sh => match vowel {
             Vowels::A => "しゃ",
@@ -50,6 +56,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "しゅ",
             Vowels::E => "しぇ",
             Vowels::O => "しょ",
+            _ => "",
         },
         Consonants::Sg => match vowel {
             Vowels::A => "しゃ",
@@ -57,6 +64,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "しゅ",
             Vowels::E => "しぇ",
             Vowels::O => "しょ",
+            _ => "",
         },
         Consonants::Z => match vowel {
             Vowels::A => "ざ",
@@ -64,6 +72,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ず",
             Vowels::E => "ぜ",
             Vowels::O => "ぞ",
+            _ => "",
         },
         Consonants::J => match vowel {
             Vowels::A => "じゃ",
@@ -71,6 +80,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "じゅ",
             Vowels::E => "じぇ",
             Vowels::O => "じょ",
+            _ => "",
         },
         Consonants::Zy => match vowel {
             Vowels::A => "じゃ",
@@ -78,6 +88,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "じゅ",
             Vowels::E => "じぇ",
             Vowels::O => "じょ",
+            _ => "",
         },
         Consonants::Zg => match vowel {
             Vowels::A => "じゃ",
@@ -85,6 +96,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "じゅ",
             Vowels::E => "じぇ",
             Vowels::O => "じょ",
+            _ => "",
         },
         Consonants::T => match vowel {
             Vowels::A => "た",
@@ -92,6 +104,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "つ",
             Vowels::E => "て",
             Vowels::O => "と",
+            _ => "",
         },
         Consonants::Ty => match vowel {
             Vowels::A => "ちゃ",
@@ -99,6 +112,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ちゅ",
             Vowels::E => "ちぇ",
             Vowels::O => "ちょ",
+            _ => "",
         },
         Consonants::Th => match vowel {
             Vowels::A => "てゃ",
@@ -106,6 +120,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "てゅ",
             Vowels::E => "てぇ",
             Vowels::O => "てょ",
+            _ => "",
         },
         Consonants::D => match vowel {
             Vowels::A => "だ",
@@ -113,6 +128,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "づ",
             Vowels::E => "で",
             Vowels::O => "ど",
+            _ => "",
         },
         Consonants::Dy => match vowel {
             Vowels::A => "ぢゃ",
@@ -120,6 +136,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぢゅ",
             Vowels::E => "ぢぇ",
             Vowels::O => "ぢょ",
+            _ => "",
         },
         Consonants::Dh => match vowel {
             Vowels::A => "でゃ",
@@ -127,6 +144,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "でゅ",
             Vowels::E => "でぇ",
             Vowels::O => "でょ",
+            _ => "",
         },
         Consonants::N => match vowel {
             Vowels::A => "な",
@@ -134,6 +152,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぬ",
             Vowels::E => "ね",
             Vowels::O => "の",
+            _ => "",
         },
         Consonants::Ny => match vowel {
             Vowels::A => "にゃ",
@@ -141,6 +160,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "にゅ",
             Vowels::E => "にぇ",
             Vowels::O => "にょ",
+            _ => "",
         },
         Consonants::H => match vowel {
             Vowels::A => "は",
@@ -148,6 +168,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ふ",
             Vowels::E => "へ",
             Vowels::O => "ほ",
+            _ => "",
         },
         Consonants::Hy => match vowel {
             Vowels::A => "ひゃ",
@@ -155,6 +176,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ひゅ",
             Vowels::E => "ひぇ",
             Vowels::O => "ひょ",
+            _ => "",
         },
         Consonants::Hg => match vowel {
             Vowels::A => "ひゃ",
@@ -162,6 +184,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ひゅ",
             Vowels::E => "ひぇ",
             Vowels::O => "ひょ",
+            _ => "",
         },
         Consonants::F => match vowel {
             Vowels::A => "ふぁ",
@@ -169,6 +192,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ふ",
             Vowels::E => "ふぇ",
             Vowels::O => "ふぉ",
+            _ => "",
         },
         Consonants::Fy => match vowel {
             Vowels::A => "ふゃ",
@@ -176,6 +200,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ふゅ",
             Vowels::E => "ふぇ",
             Vowels::O => "ふょ",
+            _ => "",
         },
         Consonants::B => match vowel {
             Vowels::A => "ば",
@@ -183,6 +208,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぶ",
             Vowels::E => "べ",
             Vowels::O => "ぼ",
+            _ => "",
         },
         Consonants::By => match vowel {
             Vowels::A => "びゃ",
@@ -190,6 +216,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "びゅ",
             Vowels::E => "びぇ",
             Vowels::O => "びょ",
+            _ => "",
         },
         Consonants::Bg => match vowel {
             Vowels::A => "びゃ",
@@ -197,6 +224,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "びゅ",
             Vowels::E => "びぇ",
             Vowels::O => "びょ",
+            _ => "",
         },
         Consonants::P => match vowel {
             Vowels::A => "ぱ",
@@ -204,6 +232,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぷ",
             Vowels::E => "ぺ",
             Vowels::O => "ぽ",
+            _ => "",
         },
         Consonants::Py => match vowel {
             Vowels::A => "ぴゃ",
@@ -211,6 +240,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぴゅ",
             Vowels::E => "ぴぇ",
             Vowels::O => "ぴょ",
+            _ => "",
         },
         Consonants::Pg => match vowel {
             Vowels::A => "ぴゃ",
@@ -218,6 +248,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ぴゅ",
             Vowels::E => "ぴぇ",
             Vowels::O => "ぴょ",
+            _ => "",
         },
         Consonants::M => match vowel {
             Vowels::A => "ま",
@@ -225,6 +256,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "む",
             Vowels::E => "め",
             Vowels::O => "お",
+            _ => "",
         },
         Consonants::My => match vowel {
             Vowels::A => "みゃ",
@@ -232,6 +264,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "みゅ",
             Vowels::E => "みぇ",
             Vowels::O => "みょ",
+            _ => "",
         },
         Consonants::Y => match vowel {
             Vowels::A => "や",
@@ -239,6 +272,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ゆ",
             Vowels::E => "いぇ",
             Vowels::O => "よ",
+            _ => "",
         },
         Consonants::R => match vowel {
             Vowels::A => "ら",
@@ -246,6 +280,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "る",
             Vowels::E => "れ",
             Vowels::O => "ろ",
+            _ => "",
         },
         Consonants::Ry => match vowel {
             Vowels::A => "りゃ",
@@ -253,6 +288,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "りゅ",
             Vowels::E => "りぇ",
             Vowels::O => "りょ",
+            _ => "",
         },
         Consonants::W => match vowel {
             Vowels::A => "わ",
@@ -260,6 +296,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "う",
             Vowels::E => "うぇ",
             Vowels::O => "を",
+            _ => "",
         },
         Consonants::Wh => match vowel {
             Vowels::A => "うぁ",
@@ -267,6 +304,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "う",
             Vowels::E => "うぇ",
             Vowels::O => "うぉ",
+            _ => "",
         },
         Consonants::V => match vowel {
             Vowels::A => "ゔぁ",
@@ -274,6 +312,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::U => "ゔ",
             Vowels::E => "ゔぇ",
             Vowels::O => "ゔぉ",
+            _ => "",
         },
     }
 }

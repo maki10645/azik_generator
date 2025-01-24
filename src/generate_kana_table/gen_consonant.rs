@@ -1,4 +1,4 @@
-#[derive(Clone, Debug, Copy, strum::Display)]
+#[derive(Clone, Debug, Copy, strum::Display, strum::EnumString)]
 pub enum Consonants {
     K,
     Ky,

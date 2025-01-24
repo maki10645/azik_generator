@@ -18,10 +18,6 @@ pub enum AssignableTokens {
     Period,
     #[strum(serialize = "-")]
     Dash,
-    O,
-    A,
-    I,
-    E,
     J,
     X,
     C,

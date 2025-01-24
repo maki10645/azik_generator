@@ -1,6 +1,8 @@
 use std::fs::File;
 use std::io::{BufReader, Write};
 
+use crate::generate_kana_table::azik_config::gen_sequence;
+
 use super::azik_config::AzikConfig;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
@@ -45,7 +47,7 @@ $	$
 .	。
 /	/
 :	:
-;	ん
+;	;
 <	<
 =	=
 >	>
@@ -71,10 +73,10 @@ z[	『
 z]	』
 z{	【
 z}	】
-zH	←
-zJ	↓
-zK	↑
-zL	→
+zh	←
+zj	↓
+zk	↑
+zl	→
 z;	゛
 z:	゜
 
@@ -99,6 +101,10 @@ o	お
             out.push_str(&(alphs + "	" + kana.as_str()));
         }
     }
+    out.push_str("\n");
+    let config = azik_deserializer();
+    out.push_str(gen_sequence(config).as_str());
+
     let mut file = File::create("table.txt").expect("hoge");
 
     let _ = file.write_all(out.as_bytes());
@@ -106,10 +112,10 @@ o	お
     let _ = file.flush();
 }
 
-pub fn azik_deserializer() {
+pub fn azik_deserializer() -> AzikConfig {
     let file = File::open("input.json").expect("Can't read file");
     let reader: BufReader<File> = BufReader::new(file);
-    let out: Result<AzikConfig, serde_json::Error> = serde_json::from_reader(reader);
+    let config: Result<AzikConfig, serde_json::Error> = serde_json::from_reader(reader);
 
-    print!("{:?}", out.unwrap())
+    config.expect("Not support this format")
 }
