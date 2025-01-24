@@ -34,7 +34,7 @@ JsonでAzikが実装されたGoogle IMEのかなテーブルが生成できま�
       "Sequence": "an"
     },
     {
-      "Token": "i",
+      "Token": "s",
       "Sequence": "in"
     },
     {

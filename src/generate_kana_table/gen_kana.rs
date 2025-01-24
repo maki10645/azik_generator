@@ -255,7 +255,7 @@ pub fn gen_hiragana(consonant: Consonants, vowel: Vowels) -> &'static str {
             Vowels::I => "み",
             Vowels::U => "む",
             Vowels::E => "め",
-            Vowels::O => "お",
+            Vowels::O => "も",
             _ => "",
         },
         Consonants::My => match vowel {
