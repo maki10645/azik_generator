@@ -1,7 +1,7 @@
-pub mod assignable_tokens;
-pub mod azik_config;
-pub mod deserealizer;
-pub mod gen_consonant;
-pub mod gen_kana;
+mod assignable_tokens;
+mod azik_config;
+mod deserealizer;
+mod gen_consonant;
+mod gen_kana;
 pub mod gen_kana_table;
-pub mod gen_vowel;
+mod gen_vowel;

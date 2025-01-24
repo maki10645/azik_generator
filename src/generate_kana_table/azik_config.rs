@@ -3,7 +3,7 @@ use std::str::FromStr;
 use super::{
     assignable_tokens::{Assignable, AssignableTokens},
     gen_consonant::gen_consonants_array,
-    gen_kana::{self, gen_hiragana},
+    gen_kana::gen_hiragana,
     gen_vowel::{Vowels, vowel_to_kana},
 };
 use serde::{Deserialize, Serialize};

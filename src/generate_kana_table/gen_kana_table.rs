@@ -1,9 +1,8 @@
 use std::fs::File;
-use std::io::{BufReader, Write};
+use std::io::Write;
 
 use crate::generate_kana_table::azik_config::gen_sequence;
 
-use super::azik_config::AzikConfig;
 use super::deserealizer::azik_deserializer;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
