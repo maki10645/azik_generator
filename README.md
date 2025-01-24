@@ -4,9 +4,24 @@ JsonでAzikが実装されたGoogle IMEのかなテーブルが生成できま�
 木村氏のAzikの割り当てが気に食わない、またはqwerty以外の配列でもAzikが使いたい
 というような方は試してみてください
 
+インストールは
+
+```bash
+cargo install azik_generator
+```
+
+で実行は
+
+```bash
+azik_generator input.json
+```
+
+となっています
+
 入力するべきjsonは以下の様です
 
 ```jsonc
+// input.json
 {
   "Sequence": [
     {
@@ -67,3 +82,5 @@ Sokuon(促音)とは"っ"のことです。
 
 - [ ] シーケンスと子音か被った場合(shでしゃ行が打ちたいがhにennが割り当てられているなど)の対処[このようにすれば対処可能](https://makiyuki.blog/blog/updateazik117.html)
 - [ ] 特殊拡張の設定を可能に
+
+[紹介記事](https://makiyuki.blog/blog/azik_generator.html)
