@@ -3,12 +3,12 @@ use std::io::Write;
 
 use crate::generate_kana_table::azik_config::gen_sequence;
 
-use super::deserealizer::azik_deserializer;
+use super::azik_config::AzikConfig;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
 use super::gen_vowel::gen_vowels_array;
 
-pub fn gen_hiragana_table() {
+pub fn gen_hiragana_table(config: AzikConfig) -> String {
     let mut out = String::new();
     // Azikの対象外を事前に作成
     out.push_str(
@@ -102,12 +102,6 @@ o	お
         }
     }
     out.push_str("\n");
-    let config = azik_deserializer();
     out.push_str(gen_sequence(config).as_str());
-
-    let mut file = File::create("table.txt").expect("hoge");
-
-    let _ = file.write_all(out.as_bytes());
-
-    let _ = file.flush();
+    out
 }
