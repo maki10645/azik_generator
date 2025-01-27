@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::Write;
-
 use crate::generate_kana_table::azik_config::gen_sequence;
 
 use super::azik_config::AzikConfig;

@@ -3,7 +3,7 @@ name = "azik_generator"
 license = "MIT"
 authors = ["Maki <maki111000664455@gmail.com>"]
 description = "Generate Google IME Setting file"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 
 [dependencies]

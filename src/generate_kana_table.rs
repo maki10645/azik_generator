@@ -1,5 +1,5 @@
 mod assignable_tokens;
-mod azik_config;
+pub mod azik_config;
 pub mod deserealizer;
 mod gen_consonant;
 mod gen_kana;
