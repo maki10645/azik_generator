@@ -1,5 +1,4 @@
 use super::azik_config::AzikConfig;
-use clap::Parser;
 use std::{fs::File, io::BufReader};
 
 #[derive(Parser)]
