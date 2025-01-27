@@ -1,3 +1,4 @@
-**/target
+/target
+/generate_kana_table/target
 /table.txt
 /input.json
