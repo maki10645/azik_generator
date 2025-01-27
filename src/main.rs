@@ -1,10 +1,8 @@
-mod generate_kana_table;
-
 use std::{fs::File, io::Write};
 
-use generate_kana_table::{deserealizer::azik_deserializer, gen_kana_table::gen_hiragana_table};
-
-pub use crate::generate_kana_table::gen_kana_table;
+use generate_kana_table::generate_kana_table::{
+    deserealizer::azik_deserializer, gen_kana_table::gen_hiragana_table,
+};
 
 fn main() {
     let config = azik_deserializer();
