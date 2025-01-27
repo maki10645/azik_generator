@@ -6,9 +6,6 @@ description = "Generate Google IME Setting file"
 version = "0.1.4"
 edition = "2021"
 
-[workspace]
-members = ["generate_kana_table"]
-
 [dependencies]
 serde = { version = "1.0.217", features = ["derive"] }
 strum = { version = "0.26.3", features = ["derive"] }
