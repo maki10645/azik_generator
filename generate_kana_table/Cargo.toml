@@ -2,6 +2,9 @@
 name = "generate_kana_table"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["Maki <maki111000664455@gmail.com>"]
+description = "Generate Google IME Setting file"
 
 [dependencies]
 serde = { version = "1.0.217", features = ["derive"] }
