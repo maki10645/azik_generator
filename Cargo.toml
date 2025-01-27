@@ -10,4 +10,4 @@ edition = "2021"
 members = ["generate_kana_table"]
 
 [dependencies]
-generate_kana_table = { path = "generate_kana_table" }
+generate_kana_table = "0.1.0"

@@ -55,9 +55,6 @@ dependencies = [
 [[package]]
 name = "azik_generator"
 version = "0.1.4"
-dependencies = [
- "generate_kana_table",
-]
 
 [[package]]
 name = "clap"
