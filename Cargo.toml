@@ -7,6 +7,5 @@ version = "0.1.5"
 edition = "2021"
 
 [dependencies]
-#generate_kana_table = "0.1.1"
-generate_kana_table = { path = "generate_kana_table" }
-regex = "1.11.1"
+generate_kana_table = "0.1.2"
+#generate_kana_table = { path = "generate_kana_table" }
