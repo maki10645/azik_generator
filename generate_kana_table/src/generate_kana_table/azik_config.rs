@@ -4,7 +4,7 @@ use super::{
     assignable_tokens::{Assignable, AssignableTokens},
     gen_consonant::gen_consonants_array,
     gen_kana::gen_hiragana,
-    gen_vowel::{Vowels, vowel_to_kana},
+    gen_vowel::{vowel_to_kana, Vowels},
 };
 use serde::{Deserialize, Serialize};
 
@@ -16,8 +16,9 @@ pub struct AzikConfig {
     pub Hatsuon: String,
 }
 
-pub fn gen_sequence(config: AzikConfig) -> String {
+pub fn gen_sequence(config: AzikConfig) -> (String, String) {
     let mut out = String::new();
+    let mut out_seq = String::new();
     let hatsuon_sequence = AssignableTokens::from_str(config.Hatsuon.to_uppercase().as_str())
         .expect("It's not Assignable. Did you use vowels or numbers? change Hatsuon in JSON")
         .to_string()
@@ -43,10 +44,10 @@ pub fn gen_sequence(config: AzikConfig) -> String {
             Vowels::from_str(&sequence[1].to_uppercase().to_string().as_str())
                 .expect("It's not vowel or something"),
         );
+        let assignable = i.Token.to_lowercase();
 
         for j in gen_consonants_array() {
             let consonant = j;
-            let assignable = i.Token.to_lowercase();
             let kana = gen_hiragana(consonant, kana_vowel.expect("It's not vowel or something"));
 
             out.push_str(
@@ -58,8 +59,9 @@ pub fn gen_sequence(config: AzikConfig) -> String {
                     + "\n"),
             );
         }
-        out.push_str("\n");
+        out_seq.push_str(&assignable);
+        out.push("\n".chars().next().unwrap());
     }
 
-    out
+    (out, out_seq.to_string())
 }

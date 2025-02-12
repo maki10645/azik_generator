@@ -1,3 +1,5 @@
+use regex::Regex;
+
 use crate::generate_kana_table::azik_config::gen_sequence;
 
 use super::azik_config::AzikConfig;
@@ -84,21 +86,50 @@ e	え
 o	お
 ",
     );
+    let gen_seq = gen_sequence(config);
+    let sequences = gen_seq.0;
+    let tokens = gen_seq.1;
+    out.push_str(sequences.as_str());
 
     for i in 0..39 {
         let consonant = *gen_consonants_array().get(i).unwrap();
-        let consonant_alph = consonant.to_string();
+        let consonant_alph = consonant.to_string().to_lowercase();
         for j in 0..5 {
             let vowel = *gen_vowels_array().get(j).unwrap();
             let kana = gen_hiragana(consonant, vowel).to_string() + "\n";
             let vowel_alph = vowel.to_string();
+            let re = Regex::new(&(consonant_alph.to_lowercase() + "\t" + r"([ぁ-んー]*)")).unwrap();
+            let consonant_last = consonant_alph
+                .to_lowercase()
+                .as_str()
+                .chars()
+                .last()
+                .unwrap();
 
             let alphs = consonant_alph.clone().to_lowercase() + &vowel_alph.to_lowercase();
 
-            out.push_str(&(alphs + "	" + kana.as_str()));
+            tokens.split("").for_each(|t| {
+                if consonant_last.to_string() == t && consonant_alph.len() >= 2 {
+                    //println!("{}\t{}", consonant_alph_low, t);
+
+                    let hoge = match re.captures(&sequences.to_lowercase()) {
+                        Some(caps) => alphs.replace(&consonant_alph, &caps[1]),
+                        None => "How".to_string(),
+                    };
+
+                    let lhs = hoge;
+                    out.push_str(&(lhs + "	" + kana.as_str()));
+                }
+            });
         }
     }
-    out.push_str("\n");
-    out.push_str(gen_sequence(config).as_str());
+    out.push("\n".chars().next().unwrap());
+
     out
 }
+
+//sh
+//sh*
+//th*
+//wh*
+//dh*
