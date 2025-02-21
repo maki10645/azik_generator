@@ -1,3 +1,4 @@
+#![feature(string_remove_matches)]
 mod generate_kana_table;
 
 pub use generate_kana_table::{

@@ -95,6 +95,7 @@ o	お
         let consonant = *gen_consonants_array().get(i).unwrap();
         let consonant_alph = consonant.to_string().to_lowercase();
         for j in 0..5 {
+            let mut dup_flag = false;
             let vowel = *gen_vowels_array().get(j).unwrap();
             let kana = gen_hiragana(consonant, vowel).to_string() + "\n";
             let vowel_alph = vowel.to_string();
@@ -106,21 +107,26 @@ o	お
                 .last()
                 .unwrap();
 
-            let alphs = consonant_alph.clone().to_lowercase() + &vowel_alph.to_lowercase();
+            let mut alphs = consonant_alph.clone().to_lowercase() + &vowel_alph.to_lowercase();
 
             tokens.split("").for_each(|t| {
                 if consonant_last.to_string() == t && consonant_alph.len() >= 2 {
                     //println!("{}\t{}", consonant_alph_low, t);
 
-                    let hoge = match re.captures(&sequences.to_lowercase()) {
+                    let lhs = match re.captures(&sequences.to_lowercase()) {
                         Some(caps) => alphs.replace(&consonant_alph, &caps[1]),
                         None => "How".to_string(),
                     };
 
-                    let lhs = hoge;
                     out.push_str(&(lhs + "	" + kana.as_str()));
+                    alphs.remove_matches(&(alphs.clone() + "\t" + &kana.as_str()));
+                    dup_flag = true
                 }
             });
+            if dup_flag {
+            } else {
+                out.push_str(&(alphs.clone() + "\t" + &kana.as_str()));
+            }
         }
     }
     out.push("\n".chars().next().unwrap());
