@@ -116,7 +116,9 @@ checksum = "5b63caa9aa9397e2d9480a9b13673856c78d8ac123288526c37d7839f2a86990"
 
 [[package]]
 name = "generate_kana_table"
-version = "0.1.2"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0988161d12f67583249eda7d06b11ed5ecb2ac58a56b67241a91c984071d828"
 dependencies = [
  "clap",
  "regex",
