@@ -109,7 +109,7 @@ o	お
 
             let mut alphs = consonant_alph.clone().to_lowercase() + &vowel_alph.to_lowercase();
 
-            tokens.split("").for_each(|t| {
+            for t in tokens.split("") {
                 if consonant_last.to_string() == t && consonant_alph.len() >= 2 {
                     //println!("{}\t{}", consonant_alph_low, t);
 
@@ -122,9 +122,8 @@ o	お
                     alphs.remove_matches(&(alphs.clone() + "\t" + &kana.as_str()));
                     dup_flag = true
                 }
-            });
-            if dup_flag {
-            } else {
+            }
+            if !dup_flag {
                 out.push_str(&(alphs.clone() + "\t" + &kana.as_str()));
             }
         }

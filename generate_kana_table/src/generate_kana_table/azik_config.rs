@@ -50,6 +50,10 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
             let consonant = j;
             let kana = gen_hiragana(consonant, kana_vowel.expect("It's not vowel or something"));
 
+            if consonant.to_string().chars().last().unwrap().to_string() == assignable {
+                continue;
+            }
+
             out.push_str(
                 &(consonant.to_string().to_lowercase()
                     + &assignable
