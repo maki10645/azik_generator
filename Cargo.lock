@@ -63,7 +63,7 @@ dependencies = [
 
 [[package]]
 name = "azik_generator"
-version = "0.2.0-rc3"
+version = "0.2.0"
 dependencies = [
  "generate_kana_table",
 ]
@@ -116,9 +116,9 @@ checksum = "5b63caa9aa9397e2d9480a9b13673856c78d8ac123288526c37d7839f2a86990"
 
 [[package]]
 name = "generate_kana_table"
-version = "0.2.0-rc3"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d706f1f5913bb8389e773d034268587269e4e9d10f65bd309ba83707df6026ae"
+checksum = "f1c2fb5ed3d8d4d022c878b86173fe4f4b8c473107a1268e975dadf0954edd6c"
 dependencies = [
  "clap",
  "regex",

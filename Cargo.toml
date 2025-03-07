@@ -3,9 +3,9 @@ name = "azik_generator"
 license = "MIT"
 authors = ["Maki <maki111000664455@gmail.com>"]
 description = "Generate Google IME Setting file"
-version = "0.2.0-rc3"
+version = "0.2.0"
 edition = "2021"
 
 [dependencies]
-generate_kana_table = "0.2.0-rc3"
+generate_kana_table = "0.2.0"
 #generate_kana_table = { path = "generate_kana_table" }
