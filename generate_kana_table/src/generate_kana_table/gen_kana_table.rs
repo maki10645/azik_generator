@@ -124,6 +124,17 @@ o	お
                     dup_flag = true
                 }
             }
+            if consonant_alph == "v" {
+                let lhs = match re.captures(&sequences.to_lowercase()) {
+                    Some(caps) => alphs.replace(&consonant_alph, &caps[1]),
+                    None => "How".to_string(),
+                };
+
+                out.push_str(&(lhs + "	" + kana.as_str()));
+                alphs.remove_matches(&(alphs.clone() + "\t" + &kana.as_str()));
+                dup_flag = true
+            }
+
             if !dup_flag {
                 out.push_str(&(alphs.clone() + "\t" + &kana.as_str()));
             }

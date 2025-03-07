@@ -25,7 +25,7 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
         .expect("It's not Assignable. Did you use vowels or numbers? change Hatsuon in JSON")
         .to_string()
         .to_lowercase()
-        + "	"
+        + "\t\t"
         + "ん\n";
 
     out.push_str(&hatsuon_sequence.to_string());
@@ -34,7 +34,7 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
         .expect("It's not Assignable. Did you use vowels or numbers? change Sokuon in JSON")
         .to_string()
         .to_lowercase()
-        + "	"
+        + "\t\t"
         + "っ\n\n";
 
     out.push_str(&sokuon_sequence.to_string());
@@ -97,6 +97,20 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
                     }
                 }
                 continue;
+            }
+        }
+        if consonant.to_string().to_lowercase() == "v" {
+            for t in &config.Sequence {
+                let re = Regex::new(&("v".to_string() + t.Token.as_str() + r"\t\t\p{Hiragana}*"))
+                    .unwrap();
+
+                match re.captures(&out) {
+                    Some(cap) => {
+                        delete_list.push(cap[0].to_string());
+                        println!("{}", cap[0].to_string());
+                    }
+                    None => {}
+                }
             }
         }
     }
