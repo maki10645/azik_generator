@@ -99,7 +99,8 @@ o	お
             let vowel = *gen_vowels_array().get(j).unwrap();
             let kana = gen_hiragana(consonant, vowel).to_string() + "\n";
             let vowel_alph = vowel.to_string();
-            let re = Regex::new(&(consonant_alph.to_lowercase() + "\t" + r"([ぁ-んー]*)")).unwrap();
+            let re =
+                Regex::new(&(consonant_alph.to_lowercase() + "\t\t" + r"([ぁ-んー]*)")).unwrap();
             let consonant_last = consonant_alph
                 .to_lowercase()
                 .as_str()
