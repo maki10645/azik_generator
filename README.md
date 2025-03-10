@@ -80,7 +80,7 @@ Sokuon(促音)とは"っ"のことです。
 
 現状はこの状態で公開しますが、以下の更新の余地を残しています
 
-- [ ] シーケンスと子音か被った場合(shでしゃ行が打ちたいがhにennが割り当てられているなど)の対処[このようにすれば対処可能](https://makiyuki.blog/blog/updateazik117.html)
+- [x] シーケンスと子音か被った場合(shでしゃ行が打ちたいがhにennが割り当てられているなど)の対処[このようにすれば対処可能](https://makiyuki.blog/blog/updateazik117.html)
 - [ ] 特殊拡張の設定を可能に
 
 [紹介記事](https://makiyuki.blog/blog/azik_generator.html)
