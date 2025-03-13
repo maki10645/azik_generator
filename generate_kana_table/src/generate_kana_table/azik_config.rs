@@ -6,7 +6,7 @@ use super::{
     assignable_tokens::{Assignable, AssignableTokens},
     gen_consonant::gen_consonants_array,
     gen_kana::gen_hiragana,
-    gen_vowel::{vowel_to_kana, Vowels},
+    gen_vowel::{vowel_to_hiragana, Vowels},
 };
 use serde::{Deserialize, Serialize};
 
@@ -44,7 +44,7 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
     for i in &config.Sequence {
         let sequence: Vec<_> = i.Sequence.to_string().chars().collect();
         let kana_vowel = Vowels::from_str(&sequence[0].to_uppercase().to_string().as_str());
-        let free_vowel = vowel_to_kana(
+        let free_vowel = vowel_to_hiragana(
             Vowels::from_str(&sequence[1].to_uppercase().to_string().as_str())
                 .expect("It's not vowel or something"),
         );
@@ -107,7 +107,6 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
                 match re.captures(&out) {
                     Some(cap) => {
                         delete_list.push(cap[0].to_string());
-                        println!("{}", cap[0].to_string());
                     }
                     None => {}
                 }
@@ -117,7 +116,6 @@ pub fn gen_sequence(config: AzikConfig) -> (String, String) {
 
     for i in &delete_list {
         out.remove_matches(i);
-        println!("{}", i)
     }
 
     (out, out_seq.to_string())
