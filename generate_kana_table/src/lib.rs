@@ -2,5 +2,8 @@
 mod generate_kana_table;
 
 pub use generate_kana_table::{
-    azik_config::AzikConfig, deserealizer::azik_deserializer, gen_kana_table::gen_hiragana_table,
+    azik_config::AzikConfig,
+    deserealizer::{azik_deserializer, get_mode},
+    gen_corvus_skk_table::gen_corvuss_skk_table,
+    gen_google_ime_table::gen_google_ime_table,
 };

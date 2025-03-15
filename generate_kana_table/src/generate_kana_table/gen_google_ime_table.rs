@@ -1,13 +1,13 @@
 use regex::Regex;
 
-use crate::generate_kana_table::azik_config::gen_sequence;
+use crate::generate_kana_table::azik_config::gen_google_ime_sequence;
 
 use super::azik_config::AzikConfig;
 use super::gen_consonant::gen_consonants_array;
 use super::gen_kana::gen_hiragana;
 use super::gen_vowel::gen_vowels_array;
 
-pub fn gen_hiragana_table(config: AzikConfig) -> String {
+pub fn gen_google_ime_table(config: AzikConfig) -> String {
     let mut out = String::new();
     // Azikの対象外を事前に作成
     out.push_str(
@@ -86,7 +86,7 @@ e	え
 o	お
 ",
     );
-    let gen_seq = gen_sequence(config);
+    let gen_seq = gen_google_ime_sequence(config);
     let sequences = gen_seq.0;
     let tokens = gen_seq.1;
     out.push_str(sequences.as_str());

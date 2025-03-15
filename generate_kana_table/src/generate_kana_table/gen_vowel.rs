@@ -15,7 +15,7 @@ pub fn gen_vowels_array() -> Vec<Vowels> {
     out
 }
 
-pub fn vowel_to_kana(vowel: Vowels) -> &'static str {
+pub fn vowel_to_hiragana(vowel: Vowels) -> &'static str {
     match vowel {
         Vowels::A => "あ",
         Vowels::I => "い",
@@ -23,5 +23,25 @@ pub fn vowel_to_kana(vowel: Vowels) -> &'static str {
         Vowels::E => "え",
         Vowels::O => "お",
         Vowels::N => "ん",
+    }
+}
+pub fn vowel_to_katakana(vowel: Vowels) -> &'static str {
+    match vowel {
+        Vowels::A => "ア",
+        Vowels::I => "イ",
+        Vowels::U => "ウ",
+        Vowels::E => "エ",
+        Vowels::O => "オ",
+        Vowels::N => "ン",
+    }
+}
+pub fn vowel_to_half_katakana(vowel: Vowels) -> &'static str {
+    match vowel {
+        Vowels::A => "ｱ",
+        Vowels::I => "ｲ",
+        Vowels::U => "ｳ",
+        Vowels::E => "ｴ",
+        Vowels::O => "ｵ",
+        Vowels::N => "ﾝ",
     }
 }

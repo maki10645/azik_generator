@@ -1,6 +1,6 @@
 [package]
 name = "generate_kana_table"
-version = "0.2.0"
+version = "0.3.0-rc1"
 edition = "2021"
 license = "MIT"
 authors = ["Maki <maki111000664455@gmail.com>"]
@@ -13,3 +13,4 @@ strum_macros = "0.27.1"
 serde_json = "1.0.140"
 clap = { version = "4.5.31", features = ["derive"] }
 regex = "1.11.1"
+kanaria = "0.2.0"

@@ -5,6 +5,7 @@ use std::{fs::File, io::BufReader};
 #[derive(Parser)]
 struct Cli {
     path: std::path::PathBuf,
+    mode: Option<String>,
 }
 
 pub fn azik_deserializer() -> AzikConfig {
@@ -14,4 +15,8 @@ pub fn azik_deserializer() -> AzikConfig {
     let config: Result<AzikConfig, serde_json::Error> = serde_json::from_reader(reader);
 
     config.expect("Not support this format")
+}
+
+pub fn get_mode() -> Option<String> {
+    Cli::parse().mode
 }

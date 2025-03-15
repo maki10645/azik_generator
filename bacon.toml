@@ -70,12 +70,25 @@ on_success = "back"                               # so that we don't open the br
 
 # You can run your application and have the result displayed in bacon,
 # if it makes sense for this crate.
-[jobs.run]
+[jobs.run-g]
 command = [
   "cargo",
   "run",
   "--",
   "input.json",
+  # put launch parameters for your program behind a `--` separator
+]
+need_stdout = true
+allow_warnings = true
+background = true
+
+[jobs.run-s]
+command = [
+  "cargo",
+  "run",
+  "--",
+  "input.json",
+  "corvusskk",
   # put launch parameters for your program behind a `--` separator
 ]
 need_stdout = true
