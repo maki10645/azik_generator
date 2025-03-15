@@ -1,6 +1,6 @@
 [package]
 name = "generate_kana_table"
-version = "0.3.0-rc1"
+version = "0.3.0"
 edition = "2021"
 license = "MIT"
 authors = ["Maki <maki111000664455@gmail.com>"]
