@@ -70,13 +70,10 @@ azik_generator input.json
 }
 ```
 
-これは私が作っている[まきゆきAZIK4大西](https://github.com/maki-07061210/MakiyukiAZIK4Ohnishi)とおおよそ同一の動作をするためのjsonです
+これは私が作っている[まきゆきAZIK4大西](https://github.com/maki-07061210/MakiyukiAZIK4Ohnishi)と~おおよそ~同一の動作をするためのjsonです
 
 Hatsuon(撥音)とは"ん"のことであり
 Sokuon(促音)とは"っ"のことです。
-
-現状では完全にまきゆきAZIK4大西の動作をするものでは有りませんが、出力されたtxtファイルを編集することで
-普通に1からIMEのかなテーブルを編集するより100倍位ラクです。
 
 現状はこの状態で公開しますが、以下の更新の余地を残しています
 
